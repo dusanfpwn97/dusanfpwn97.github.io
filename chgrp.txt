@@ -1,0 +1,24 @@
+chgrp.exe C:\Users\dusan\AppData\Roaming\Unreal Engine\UnrealBuildTool\SSHKeys\192.168.1.98\dlogic\RemoteToolChainPrivate.key
+
+C:\Users\dusan\AppData\Roaming\Unreal Engine\UnrealBuildTool\SSHKeys\192.168.1.128\dlogic
+
+chgrp.exe Users /cygdrive/C/Users/dusan/AppData/Roaming/Unreal\ Engine/UnrealBuildTool/SSHKeys/192.168.1.124/dlogic/RemoteToolChainPrivate.key
+
+chgrp.exe Users /cygdrive/C/Users/dusan/AppData/Roaming/Unreal\ Engine/UnrealBuildTool/SSHKeys/192.168.1.98/dlogic/RemoteToolChainPrivate.key
+
+chmod.exe 600 /cygdrive/C/Users/dusan/AppData/Roaming/Unreal\ Engine/UnrealBuildTool/SSHKeys/192.168.1.98/dlogic/RemoteToolChainPrivate.key
+
+
+
+
+***
+chgrp.exe Users "C:\Users\dusan\Desktop\ginst_unreal\trunk 4.21a\RemoteToolChainPrivate.key"
+
+chmod.exe 600 "C:\Users\dusan\Desktop\ginst_unreal\trunk 4.21a\RemoteToolChainPrivate.key"
+
+
+chgrp.exe Users /cygdrive/C/Users/dusan/Desktop/ginst_unreal/trunk\ 4.21a/RemoteToolChainPrivate.key
+
+chmod.exe 600 /cygdrive/C/Users/dusan/Desktop/ginst_unreal/trunk\ 4.21a/RemoteToolChainPrivate.key
+
+
