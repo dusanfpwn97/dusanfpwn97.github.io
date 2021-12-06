@@ -1,58 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
-	<meta name="keywords"    content="UE4, ue4, UnrealEngine 4, Unreal Engine 4, gamedev, game development">
-	<meta name="description" content="Unreal Engine 4 tips">
-	<meta name="author"      content="Dusan Fajler">
-	
-	<style>
-		@font-face { font-family: RobotoSlab; src: url('Roboto_Slab/RobotoSlab-VariableFont_wght.ttf'); } 
-		body {
-			background-color: #000000;
-		}
-		
-		h1 {
-			<!--background-color: #130606;-->
-			display: block;
-			font-size: 2em;
-			font-family: RobotoSlab
-			margin-top: 0em;
-			margin-bottom: 0em;
-			margin-left: 0em;
-			margin-right: 0em;
-			font-weight: bold;
-			color: #F4A950;
-		}
-		
-		h3 {
-			<!--background-color: #130606;-->
-			display: block;
-			font-size: 2em;
-			font-family: RobotoSlab
-			margin-top: 0em;
-			margin-bottom: 0em;
-			margin-left: 0em;
-			margin-right: 0em;
-			font-weight: bold;
-			color: #F4A950;
-		}
-	</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eferus</title>
+  <link rel="stylesheet" href="article.css" >
 </head>
 
-<body>
-	<h1>
-		<center>
-			Dusan sssssssFajler
-		</center>
-	</h1>
-	
-	<h3>
-		Properties are declared using standard C++ variable syntax, preceded by the UPROPERTY macro which defines property metadata and variable specifiers.
-	</h3>
-	
-	<h3>
-		UPROPERTY([specifier, specifier, ...], [meta(key=value, key=value, ...)]) Type VariableName;
-	</h3>
+<body style="background-color:#080808;">
+	<article>
+		<h1>
+			Math Expression Node performance test
+		</h1>
+		<h2 class="h2_summary">
+			Summary
+		</h2>
+		<p class="h3_summary">
+			Results for 5 000 000 calculations
+		</p>
+		
+		<table>
+			<tr>
+				<th class="th_summary"></th>
+				<th class="th_summary">C++</th>
+				<th class="th_summary">M. Expr.</th>
+				<th class="th_summary">BP</th>
+			</tr>
+			<tr>
+				<th class="th_summary">Windows Editor</th>
+				<td class="td_summary">0.04 s</td>
+				<td class="td_summary">12.9 s</td>
+				<td class="td_summary">13.5 s</td>
+			</tr>
+			<tr>
+				<th class="th_summary">Windows Dev</th>
+				<td class="td_summary">0.04 s</td>
+				<td class="td_summary">1.80 s</td>
+				<td class="td_summary">2.40 s</td>
+			</tr>
+			<tr>
+				<th class="th_summary">Windows Shipping</th>
+				<td class="td_summary">0.04 s</td>
+				<td class="td_summary">1.15 s</td>
+				<td class="td_summary">1.46 s</td>
+			</tr>
+			<tr>
+				<th class="th_summary">Windows Ship. Nat.</th>
+				<td class="td_summary">0.04 s</td>
+				<td class="td_summary">0.11 s</td>
+				<td class="td_summary">0.11 s</td>
+			</tr>
+			<tr>
+				<th class="th_summary">Android Dev</th>
+				<td class="td_summary">0.13 s</td>
+				<td class="td_summary">3.32 s</td>
+				<td class="td_summary">4.15 s</td>
+			</tr>
+			<tr>
+				<th class="th_summary">Android Shipping</th>
+				<td class="td_summary">0.13 s</td>
+				<td class="td_summary">2.42 s</td>
+				<td class="td_summary">3.19 s</td>
+			</tr>
+			<tr>
+				<th class="th_summary">Android Ship. Nat.</th>
+				<td class="td_summary">0.13 s</td>
+				<td class="td_summary">0.25 s</td>
+				<td class="td_summary">0.25 s</td>
+			</tr>
+		</table>
+		
+		<p class="weaktext"> Ryzen 3900x, 32GB 3200MHz</p>
+		<p class="weaktext"> Android Pixel 4a</p>
+
+		<hr>
+		<br>
+
+		<p> Formula for testing: <strong>cos(((1 + 2.f) * (sin(11.f))) - (iterator / 3.2f));</strong> </p>
+		
+		<p>C++:</p>
+		
+		<pre class = "CustomCode">
+float Result = 0.f;
+
+for (int i = 1; i <= NumberOfCalcs; i++)
+{
+	Result += FMath::Cos(((1 + 2.f) * (FMath::Sin(11.f))) - (i / 3.2f));
+}
+
+return Result;
+		</pre>
+		
+		<p>
+			BP:
+		</p>
+		<a target="_blank" href="MathExpressionBP.png">
+			<img src="MathExpressionBP.png" class="BP_Image" alt="MathExpressionBP">
+		</a>
 </body>
 </html>
