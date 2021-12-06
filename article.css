@@ -8,7 +8,7 @@ h1 {
 	display: block;
 	color: #E1E1E1;
 	text-align: center;
-	font-size: 2.75em;
+	font-size: 2em;
 	font-family: "Fonts/SourceSansPro-Regular", SourceSansPro-Regular, sans-serif;
 	margin-block-start: 0.67em;
 	margin-block-end: 0.67em;
@@ -21,7 +21,7 @@ h2 {
 	display: block;
 	color: #E1E1E1;
 	text-align: center;
-	font-size: 2em;
+	font-size: 1.5em;
 	font-family: "Fonts/SourceSansPro-Regular", SourceSansPro-Regular, sans-serif;
 	margin-block-start: 0.67em;
 	margin-block-end: 0.67em;
@@ -34,7 +34,7 @@ h3 {
 	display: block;
 	color: #E1E1E1;
 	text-align: center;
-	font-size: 2em;
+	font-size: 1.25em;
 	font-family: "Fonts/SourceSansPro-Regular", SourceSansPro-Regular, sans-serif;
 	margin-block-start: 0.67em;
 	margin-block-end: 0.67em;
@@ -65,9 +65,9 @@ td
 {
 	color: #E1E1E1;
 	text-align: left;
-	font-size: 1.1em;
+	font-size: 1em;
 	font-family: "Fonts/SourceSansPro-Regular", SourceSansPro-Regular, sans-serif;
-	border-spacing: 15px;
+
 }
 
 hr{
@@ -133,7 +133,7 @@ table
 }
 
 .th_summary {
-	font-size: 1.1em;
+	font-size: 1em;
 	color: #657B81;
 	text-align: left;
 }
@@ -141,7 +141,7 @@ table
 .td_summary{
 	color: #657B81;
 	text-align: center;
-	font-size: 1.1em;
+	font-size: 1em;
 }
 
 .BP_Image
@@ -162,4 +162,10 @@ table
 .BP_Image:hover
 {
 	box-shadow: 0 0 4px 2px rgba(0, 140, 186, 0.5);
+}
+
+.p_reference{
+	font-size: 1em;
+	color: #657B81;
+	text-align: center;
 }
