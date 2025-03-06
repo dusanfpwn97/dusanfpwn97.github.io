@@ -1,116 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eferus</title>
-  <link rel="stylesheet" href="article.css" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dušan Fajler - Game Developer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        h1 {
+            color: #CCCCCC;
+        }
+        .project {
+            background: #333;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+        .contact {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
 </head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dušan Fajler</h1>
+            <p>Game Developer | C++ & Unreal Engine</p>
+        </header>
+        
+        <section>
+            <h2>About Me</h2>
+            <p>I have almost 10 years of professional experience in programming in both C++ and Blueprints in Unreal Engine 4 for both Single Player and Multiplayer games</p>
+        </section>
+        
+        <section>
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Crowned in Steel – Lead Developer</h3>
+                <p><a href="https://store.steampowered.com/app/2679830/Crowned_In_Steel/">Crowned In Steel</a> is an action game set in a medieval world, and it’s me and my brother's passion project.
+                I am mainly tasked with gameplay programming, but I fill all kinds of shoes as a typical indie dev. Despite working with a small budget, our goal was to prove that we could create an unforgettable and innovative experience, offering a fresh perspective within a genre often dominated by AAA productions. This project reflects my dedication to crafting engaging gameplay and memorable experiences.</p>
+            </div>
+            
+            <div class="project">
+                <h3>Ginst – Lead Developer</h3>
+                <p>I was the lead developer on <a href="https://www.g2ames.com/ginst/">Ginst</a>, a rhythm-based music game that turns your mobile device into a playable instrument. I worked on core gameplay mechanics, note synchronization, and multiplayer functionality, ensuring a smooth and engaging experience. The game features multiple modes, from arcade challenges to free play with custom MIDI tracks. I also collaborated with designers and audio engineers to fine-tune the feel of the game. It’s been awesome seeing players enjoy and interact with music in a unique way!.</p>
+            </div>
+        </section>
 
-<body style="background-color:#080808;">
-	<article>
-		<h1>
-			Math Expression Node performance test
-		</h1>
-		<h2 class="h2_summary">
-			Summary
-		</h2>
-		<p class="h3_summary">
-			Results for 5 000 000 calculations
-		</p>
-		
-		<table>
-			<tr>
-				<th class="th_summary"></th>
-				<th class="th_summary">C++</th>
-				<th class="th_summary">M. Expr.</th>
-				<th class="th_summary">BP</th>
-			</tr>
-			<tr>
-				<th class="th_summary">Windows Editor</th>
-				<td class="td_summary">0.04s</td>
-				<td class="td_summary">12.9s</td>
-				<td class="td_summary">13.5s</td>
-			</tr>
-			<tr>
-				<th class="th_summary">Windows Dev</th>
-				<td class="td_summary">0.04s</td>
-				<td class="td_summary">1.80s</td>
-				<td class="td_summary">2.40s</td>
-			</tr>
-			<tr>
-				<th class="th_summary">Windows Shipping</th>
-				<td class="td_summary">0.04s</td>
-				<td class="td_summary">1.15s</td>
-				<td class="td_summary">1.46s</td>
-			</tr>
-			<tr>
-				<th class="th_summary">Windows Ship. Nat.</th>
-				<td class="td_summary">0.04s</td>
-				<td class="td_summary">0.11s</td>
-				<td class="td_summary">0.11s</td>
-			</tr>
-			<tr>
-				<th class="th_summary">Android Dev</th>
-				<td class="td_summary">0.13s</td>
-				<td class="td_summary">3.32s</td>
-				<td class="td_summary">4.15s</td>
-			</tr>
-			<tr>
-				<th class="th_summary">Android Shipping</th>
-				<td class="td_summary">0.13s</td>
-				<td class="td_summary">2.42s</td>
-				<td class="td_summary">3.19s</td>
-			</tr>
-			<tr>
-				<th class="th_summary">Android Ship. Nat.</th>
-				<td class="td_summary">0.13s</td>
-				<td class="td_summary">0.25s</td>
-				<td class="td_summary">0.25s</td>
-			</tr>
-		</table>
-		
-		<p class="weaktext"> Ryzen 3900x, 32GB 3200MHz</p>
-		<p class="weaktext"> Android Pixel 4a</p>
-
-		<hr>
-		<br>
-
-		<p>C++:</p>
-		
-		<pre class = "CustomCode">
-float Result = 0.f;
-
-for (int i = 1; i <= NumberOfCalcs; i++)
-{
-	Result += FMath::Cos(((1 + 2.f) * (FMath::Sin(11.f))) - (i / 3.2f));
-}
-
-return Result;
-		</pre>
-		
-		<p>
-			BP:
-		</p>
-		<a target="_blank" href="MathExpressionBP.png">
-			<img src="MathExpressionBP.png" class="BP_Image" alt="MathExpressionBP">
-		</a>
-		
-		
-		<p class = "p_reference">
-			Check the project out at my github and try it out yourself (UE 4.27)
-		</p>
-		<a target="_blank" href="https://github.com/dusanfpwn97/UE4PerformanceTests">
-			<p class = "p_reference">
-				https://github.com/dusanfpwn97/UE4PerformanceTests
-			</p>
-		</a>
-		
-		<br>
-		
-		<p class = "p_reference">
-			Licensed under <a target = "_blank" href="https://creativecommons.org/licenses/by/4.0/"> CC BY </a>
-		</p>
-		
+        <section class="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:dusanfajler@gmail.com">dusanfajler@gmail.com</a></p>
+            <p>X (Twitter): <a href="https://x.com/Dusan_Fajler">@Dusan_Fajler</a></p>
+        </section>
+    </div>
 </body>
 </html>
